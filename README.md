@@ -1,1 +1,1 @@
-# Handin_Week12_RefactorImg
+# Handin_Week12_Refactor_Image
