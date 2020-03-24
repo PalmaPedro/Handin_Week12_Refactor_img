@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -30,6 +31,9 @@ public class ImageController {
                 InputStream is = mainActivity.getContentResolver().openInputStream(uri); // the other is content provider
                 // 4. Make Bitmap from stream
                 Bitmap bitmap = BitmapFactory.decodeStream(is);
+                // 4.1 WEEK12 ASSIGNMENT : RESIZE IMAGE HERE
+                Bitmap resized = Bitmap.createScaledBitmap(bitmap, 5000, 5, true);
+                Log.i("","image resized");
                 // 5. Set bitmap to imageView
                 mainActivity.imageView.setImageBitmap(bitmap);
             } catch (FileNotFoundException e) {
